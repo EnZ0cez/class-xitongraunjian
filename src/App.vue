@@ -1,26 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="personal-page">
+    <img :src="avatar" alt="Avatar" class="avatar">
+    <h2 class="nickname">{{ nickname }}</h2>
+    <p class="student-id">学号：{{ studentId }}</p>
+    <!-- 其他个人信息 -->
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      avatar: '../bocci.jpg', // 头像图片的路径
+      nickname: 'Enzo', // 昵称
+      studentId: '2310273083' // 学号
+      // 其他个人信息的数据
+    };
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+<style scoped>
+.personal-page {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.nickname {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.student-id {
+  margin-top: 10px;
+  font-size: 16px;
 }
 </style>
